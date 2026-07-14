@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swap Heroes: Eternal Legends — Case Study · Rony</title>
+  <meta name="description" content="Case study: designing systems, economy, combat and live-ops on Swap Heroes: Eternal Legends, a live mobile squad ARPG." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { accent: "var(--accent)", "accent-strong": "var(--accent-strong)" },
+        fontFamily: { sans: ["Inter","sans-serif"], display: ["Sora","Inter","sans-serif"] },
+        maxWidth: { content: "1120px" },
+      } },
+    };
+  </script>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" data-nav>
+    <nav class="container flex items-center justify-between py-4" aria-label="Primary">
+      <a href="../index.html" class="display text-lg font-extrabold tracking-tight">Rony<span style="color: var(--accent)">.</span></a>
+      <a href="../index.html#work" class="link-underline text-sm">← All work</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HEADER -->
+    <section class="section" style="padding-bottom: 2rem; padding-top: clamp(2.5rem, 6vw, 4rem)">
+      <div class="container">
+        <div class="flex flex-wrap items-center gap-2" data-reveal>
+          <span class="chip">Live title</span>
+          <span class="chip">Squad ARPG · Gacha</span>
+          <span class="chip">3+ years</span>
+        </div>
+        <h1 class="display mt-5 text-4xl font-extrabold sm:text-5xl" data-reveal data-reveal-delay="60">Swap Heroes: Eternal Legends</h1>
+        <p class="mt-3 text-lg" style="color: var(--text-faint)" data-reveal data-reveal-delay="90">Glaive Games · formerly “Solaria: Dawn of Heroes”</p>
+        <p class="mt-6 max-w-2xl text-lg" style="color: var(--text-muted)" data-reveal data-reveal-delay="120">
+          A live, real-time squad-based ARPG where players collect heroes and swap between them mid-battle.
+          As the game designer on a tiny core team — just the two founders and me — I work hands-on across the
+          systems that make a live-service RPG tick: combat and bosses, game modes, progression and economy, with a
+          focus on midcore depth that stays approachable.
+        </p>
+
+        <!-- Hero art: official key art (hero roster) — capped at native 1024px so it renders crisp, not upscaled -->
+        <div class="mt-10 w-full overflow-hidden rounded-2xl" style="max-width: 1024px; border: 1px solid var(--border); box-shadow: var(--shadow-lift)" data-reveal>
+          <img src="../assets/img/swap-heroes-keyart.jpg" alt="Swap Heroes: Eternal Legends — hero roster key art"
+               class="block w-full" style="height: auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section class="section" style="padding-top: 1rem">
+      <div class="container grid gap-6 md:grid-cols-3">
+        <div class="card" data-reveal>
+          <h3 class="eyebrow" style="color: var(--text-faint)">My role</h3>
+          <p class="mt-3" style="color: var(--text-muted)">The game designer on a three-person core team (the founders and me) — hands-on across heroes, combat, enemies &amp; bosses, plus game modes, economy and UX. I've grown from junior into a broad role over three years.</p>
+        </div>
+        <div class="card" data-reveal data-reveal-delay="60">
+          <h3 class="eyebrow" style="color: var(--text-faint)">Platform &amp; model</h3>
+          <p class="mt-3" style="color: var(--text-muted)">Mobile (iOS &amp; Android), free-to-play live-service with gacha hero collection.</p>
+        </div>
+        <div class="card" data-reveal data-reveal-delay="120">
+          <h3 class="eyebrow" style="color: var(--text-faint)">Focus areas</h3>
+          <p class="mt-3" style="color: var(--text-muted)">Systems · Combat feel · Boss design · Economy · Live-ops · Onboarding.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I WORKED ON -->
+    <section class="section" style="padding-top: 1rem">
+      <div class="container max-w-3xl space-y-14">
+
+        <div data-reveal>
+          <p class="eyebrow">Systems &amp; Progression</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Depth that unfolds over time</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            A squad ARPG lives or dies on its long game. I work across the progression that gives players a reason to
+            keep investing — hero upgrade paths and the pacing that decides how power and new content open up over time.
+            The guiding idea was the thesis I bring to everything: real depth for players who want it, without walling
+            off newcomers who just want to jump in and play.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <p class="eyebrow">Combat &amp; Moment-to-Moment</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Swap-based, readable, satisfying</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            The core hook is swapping between heroes mid-battle, so combat has to read clearly and feel good second to
+            second. I work on hero kits, enemy and boss patterns, and difficulty tuning — chasing fights that are easy
+            to follow on the surface but reward timing, team-building and smart swaps underneath.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <p class="eyebrow">Economy &amp; Monetization</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">A healthy, honest economy</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            A free-to-play economy only works if players trust it. I contribute to the currencies, sinks and sources,
+            and the gacha hero collection — how players earn, spend and progress, and how monetization stays fair rather
+            than pushy. (Specifics are under NDA; this is the public-facing framing.)
+          </p>
+        </div>
+
+        <div data-reveal>
+          <p class="eyebrow">Live-Ops &amp; Game Modes</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Reasons to come back</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            A live game needs a steady drumbeat of things to do. I work on game modes and the live-ops cadence that
+            keep players engaged week to week — content designed to support retention and a healthy economy, not just
+            short-term spikes.
+          </p>
+        </div>
+
+        <div data-reveal>
+          <p class="eyebrow">How I approach it</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Data-informed, player-first</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            Coming from a VC-analyst background, I lean on data and competitive research as much as instinct — studying
+            how comparable games solve the same problems, then designing for our players. Three years on a live title
+            have taught me to ship, watch how real players respond, and keep iterating.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEXT -->
+    <section class="section" style="padding-top: 1rem">
+      <div class="container flex flex-col items-start justify-between gap-4 border-t pt-10 sm:flex-row sm:items-center" style="border-color: var(--border)">
+        <a href="../projects/dojo-app.html" class="link-underline">Next: JJJ Study App →</a>
+        <a href="../index.html#contact" class="btn btn-primary">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-8" style="border-color: var(--border)">
+    <div class="container flex items-center justify-between text-sm" style="color: var(--text-faint)">
+      <p>© <span data-year></span> Rony.</p>
+      <a href="#top" class="link-underline">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

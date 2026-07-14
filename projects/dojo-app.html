@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JJJ Study App — Case Study · Rony Gankin</title>
+  <meta name="description" content="Case study: JJJ Study App, a gamified PWA that teaches Japanese Ju-Jitsu technique names with flashcards, XP, streaks and a training calendar." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { accent: "var(--accent)", "accent-strong": "var(--accent-strong)" },
+        fontFamily: { sans: ["Inter","sans-serif"], display: ["Sora","Inter","sans-serif"] },
+        maxWidth: { content: "1120px" },
+      } },
+    };
+  </script>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+  <header class="nav" data-nav>
+    <nav class="container flex items-center justify-between py-4" aria-label="Primary">
+      <a href="../index.html" class="display text-lg font-extrabold tracking-tight">Rony<span style="color: var(--accent)">.</span></a>
+      <a href="../index.html#work" class="link-underline text-sm">← All work</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="section" style="padding-top: clamp(2.5rem, 6vw, 4rem)">
+      <div class="container">
+        <div class="flex flex-wrap items-center gap-2" data-reveal>
+          <span class="chip">Side project · Live PWA</span>
+          <span class="chip">Gamified learning</span>
+          <span class="chip">AI-assisted build</span>
+        </div>
+        <h1 class="display mt-5 text-4xl font-extrabold sm:text-5xl" data-reveal data-reveal-delay="60">JJJ Study App</h1>
+        <p class="mt-6 max-w-2xl text-lg" style="color: var(--text-muted)" data-reveal data-reveal-delay="120">
+          A gamified PWA that helps students at my dojo memorize Japanese Ju-Jitsu technique names in three languages —
+          Japanese (kanji + romaji), English and Hebrew. 55 techniques across 10 families, with flashcards, a gentle
+          XP-based quiz, belts, daily streaks, a training calendar and one-tap tutorial videos. I designed it, built it
+          (AI-assisted, from basic coding), and shipped it as an installable app my dojo uses on the mat.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3" data-reveal data-reveal-delay="150">
+          <a href="https://judonamesteacher.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">
+            View the live app
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3" data-reveal>
+          <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
+            <img src="../assets/img/jjj-cards.png" alt="JJJ Study App flashcard: Hiza-Hishigi shown in romaji and kanji, tap to flip" class="block w-full" loading="lazy" />
+          </figure>
+          <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
+            <img src="../assets/img/jjj-play.png" alt="JJJ Study App quiz: multiple-choice question identifying a pinning technique" class="block w-full" loading="lazy" />
+          </figure>
+          <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
+            <img src="../assets/img/jjj-names.png" alt="JJJ Study App technique list: English, Japanese kanji, romaji and Hebrew side by side" class="block w-full" loading="lazy" />
+          </figure>
+        </div>
+        <p class="mt-3 text-center text-sm" style="color: var(--text-faint)" data-reveal>Flashcards · gentle XP quiz · trilingual technique reference — running as an installable, offline PWA.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem">
+      <div class="container max-w-3xl space-y-14">
+        <div data-reveal>
+          <p class="eyebrow">The problem</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Why it exists</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            Japanese Ju-Jitsu has a huge vocabulary of technique names that students are expected to know for
+            belt exams — hard to memorize, and scattered across notes and a syllabus. I wanted a single, friendly way
+            to <em>drill</em> those names, in the languages my dojo actually uses.
+          </p>
+        </div>
+        <div data-reveal>
+          <p class="eyebrow">Design</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Gamification choices</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            Straight game-design thinking applied to learning. <strong style="color: var(--text)">Flashcards</strong>
+            with a flip (Japanese romaji + kanji on one side; English, Hebrew and a morpheme breakdown on the other)
+            plus a reverse-recall mode. A <strong style="color: var(--text)">gentle, no-punish quiz</strong> with XP,
+            combos and juice — a wrong answer just resets your combo, never a harsh fail. A
+            <strong style="color: var(--text)">belt ladder</strong> (White → Black Dan) and a
+            <strong style="color: var(--text)">daily streak</strong> for motivation, and a
+            <strong style="color: var(--text)">training calendar</strong> to log mat sessions and build the habit. A
+            roots decoder breaks names into their building blocks, and official Kodokan tutorial videos are one tap
+            away — all trilingual (Japanese · English · Hebrew), with careful attention to correct naming.
+          </p>
+        </div>
+        <div data-reveal>
+          <p class="eyebrow">Build</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Designing + shipping it myself</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            I built and shipped it as an installable <strong style="color: var(--text)">PWA</strong> (also packaged
+            toward an Android build) — AI-assisted, despite only basic coding. It's the same instinct I bring to game
+            work: own a feature end-to-end, from concept to a real thing people can use.
+          </p>
+        </div>
+        <div data-reveal>
+          <p class="eyebrow">Outcome</p>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Results</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            Live and in use at my dojo — it works fully offline on the mat and updates itself whenever I ship changes.
+            It's the study companion I wish I'd had while learning the syllabus, and the same end-to-end instinct I bring
+            to game work: take a real need, design the system around it, and ship something people actually use.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 1rem">
+      <div class="container flex flex-col items-start justify-between gap-4 border-t pt-10 sm:flex-row sm:items-center" style="border-color: var(--border)">
+        <a href="../projects/swap-heroes.html" class="link-underline">← Swap Heroes: Eternal Legends</a>
+        <a href="../index.html#contact" class="btn btn-primary">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-8" style="border-color: var(--border)">
+    <div class="container flex items-center justify-between text-sm" style="color: var(--text-faint)">
+      <p>© <span data-year></span> Rony.</p>
+      <a href="#top" class="link-underline">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

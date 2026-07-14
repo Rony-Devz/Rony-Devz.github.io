@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rony Gankin · Game Designer — Mobile Live-Service</title>
+  <meta name="description" content="Game designer for mobile live-service games. A data-driven approach to systems, mechanics, economy, live-ops, and moment-to-moment gameplay." />
+
+  <!-- Open Graph (fill image during polish) -->
+  <meta property="og:title" content="Rony Gankin · Game Designer — Mobile Live-Service" />
+  <meta property="og:description" content="A data-driven approach to systems, mechanics, economy, live-ops, and moment-to-moment gameplay." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN — no build step. Swap for a built CSS file before real launch.) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: "var(--accent)",
+            "accent-strong": "var(--accent-strong)",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            display: ["Sora", "Inter", "sans-serif"],
+          },
+          maxWidth: { content: "1120px" },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- ============================= NAV ============================= -->
+  <header class="nav" data-nav>
+    <nav class="container flex items-center justify-between py-4" aria-label="Primary">
+      <a href="#top" class="display text-lg font-extrabold tracking-tight">
+        Rony<span style="color: var(--accent)">.</span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#work" class="link-underline text-sm">Work</a>
+        <a href="#approach" class="link-underline text-sm">Approach</a>
+        <a href="#skills" class="link-underline text-sm">Skills</a>
+        <a href="#about" class="link-underline text-sm">About</a>
+        <a href="#contact" class="btn btn-ghost" data-contact-open>Get in touch</a>
+      </div>
+
+      <button
+        class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border"
+        style="border-color: var(--border)"
+        data-menu-btn
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="hidden border-t md:hidden" style="border-color: var(--border); background: var(--bg-elev)" data-mobile-menu>
+      <div class="container flex flex-col gap-1 py-3">
+        <a href="#work" class="rounded-lg px-2 py-3 text-sm">Work</a>
+        <a href="#approach" class="rounded-lg px-2 py-3 text-sm">Approach</a>
+        <a href="#skills" class="rounded-lg px-2 py-3 text-sm">Skills</a>
+        <a href="#about" class="rounded-lg px-2 py-3 text-sm">About</a>
+        <a href="#contact" class="rounded-lg px-2 py-3 text-sm" style="color: var(--accent-strong)" data-contact-open>Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================= HERO ============================= -->
+    <section class="section" style="padding: clamp(3rem, 7vw, 5rem) 0 0">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Rony Gankin · Game Designer</p>
+
+        <h1 class="display mt-5 text-4xl font-extrabold sm:text-5xl md:text-6xl" data-reveal data-reveal-delay="60">
+          <span class="text-gradient">Designing mobile live-service games</span><br />
+          with depth people can actually pick up.
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-lg" style="color: var(--text-muted)" data-reveal data-reveal-delay="120">
+          A data-driven approach to systems, mechanics, economy, live-ops, and moment-to-moment gameplay.
+        </p>
+
+        <div class="mt-9 flex flex-wrap items-center gap-3" data-reveal data-reveal-delay="180">
+          <a href="#work" class="btn btn-primary">
+            View my work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost" data-contact-open>Get in touch</a>
+          <!-- TODO: point href to real CV once provided -->
+          <a href="assets/docs/cv.pdf" class="btn btn-ghost is-placeholder" aria-label="Download CV (placeholder)">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= WORK ============================= -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow">Selected work</p>
+          <h2 class="display mt-4 text-3xl font-bold sm:text-4xl">Select projects I've worked on</h2>
+          <p class="mt-4" style="color: var(--text-muted)">
+            From moment-to-moment combat feel to the meta layers, progression and economy underneath —
+            a closer look at what I've shipped.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <!-- Swap Heroes (featured) -->
+          <a href="projects/swap-heroes.html" class="card card-link md:col-span-2" data-reveal>
+            <div class="flex flex-col gap-6 md:flex-row md:items-center">
+              <img src="assets/img/swap-heroes-keyart.jpg" alt="Swap Heroes: Eternal Legends — hero roster key art"
+                   class="w-full rounded-xl md:w-1/2" loading="lazy"
+                   style="aspect-ratio: 1024 / 500; object-fit: cover; border: 1px solid var(--border)" />
+              <div class="md:w-1/2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="chip">Live title</span>
+                  <span class="chip">Squad ARPG · Gacha</span>
+                </div>
+                <h3 class="display mt-4 flex items-center gap-2 text-2xl font-bold">
+                  Swap Heroes: Eternal Legends
+                  <svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                </h3>
+                <p class="mt-1 text-sm" style="color: var(--text-faint)">Glaive Games · formerly “Solaria: Dawn of Heroes”</p>
+                <p class="mt-4" style="color: var(--text-muted)">
+                  Three years as the game designer on a three-person core team — the two founders and me — where I've grown
+                  from junior into a hands-on role across heroes, combat, enemies and bosses, plus game modes, economy and
+                  UX. A case study in building midcore depth that stays approachable.
+                </p>
+                <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold" style="color: var(--accent-strong)">Read the case study</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- JJJ Study App -->
+          <a href="projects/dojo-app.html" class="card card-link md:col-span-2" data-reveal data-reveal-delay="80">
+            <span class="chip">Side project · Live PWA</span>
+            <h3 class="display mt-4 flex items-center gap-2 text-xl font-bold">
+              JJJ Study App
+              <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8" /></svg>
+            </h3>
+            <p class="mt-3" style="color: var(--text-muted)">
+              A gamified app that teaches Japanese Ju-Jitsu technique names (Japanese · English · Hebrew) with
+              flashcards, XP, streaks and a training calendar. Designed, built and shipped for my dojo.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= APPROACH / THESIS ============================= -->
+    <section id="approach" class="section">
+      <div class="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div data-reveal>
+          <p class="eyebrow">My take</p>
+          <h2 class="display mt-4 text-3xl font-bold sm:text-4xl">Accessible depth</h2>
+          <p class="mt-5 text-lg" style="color: var(--text-muted)">
+            I believe the future of mobile is <strong style="color: var(--text)">core/midcore depth</strong> —
+            rich mechanics and systems — delivered with the <strong style="color: var(--text)">low floor and broad
+            appeal of casual games</strong>. Depth earns retention; approachability earns the audience. My job is to
+            make them the same design — from the <strong style="color: var(--text)">moment-to-moment</strong> feel up
+            through the <strong style="color: var(--text)">meta layers</strong> that keep players invested.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2" data-reveal data-reveal-delay="80">
+          <div class="card card-static">
+            <h3 class="font-semibold">Low floor</h3>
+            <p class="mt-2 text-sm" style="color: var(--text-muted)">First-session clarity and momentum — anyone can start and feel good fast.</p>
+          </div>
+          <div class="card card-static">
+            <h3 class="font-semibold">High ceiling</h3>
+            <p class="mt-2 text-sm" style="color: var(--text-muted)">Meta systems that keep rewarding mastery, planning and experimentation.</p>
+          </div>
+          <div class="card card-static">
+            <h3 class="font-semibold">Great to touch</h3>
+            <p class="mt-2 text-sm" style="color: var(--text-muted)">Moment-to-moment gameplay that feels responsive, readable and satisfying.</p>
+          </div>
+          <div class="card card-static">
+            <h3 class="font-semibold">Data-informed</h3>
+            <p class="mt-2 text-sm" style="color: var(--text-muted)">Decisions backed by metrics, competitive research and honest teardown.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= SKILLS ============================= -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow">What I do</p>
+          <h2 class="display mt-4 text-3xl font-bold sm:text-4xl">Six pillars of craft</h2>
+          <p class="mt-4" style="color: var(--text-muted)">Transferable across casual, core and midcore — proven on a live combat RPG. Tap any pillar for a concrete example.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <details class="card pillar" data-reveal>
+            <summary>
+              <div class="text-2xl">📊</div>
+              <h3 class="display mt-3 text-lg font-bold">Data &amp; Market Intelligence</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">Reading games as an investor and analyst — their systems, economies and markets — with a close eye on Asian titles.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">I've studied games from several angles — as an investor at VGames, and through business and competitive intelligence at Glaive — digging into systems, economies and retention to understand what really makes them work. I follow Asian titles especially closely, from the household names to the niche experiments, since that's where much of the genre's innovation tends to start.</div>
+          </details>
+
+          <details class="card pillar" data-reveal data-reveal-delay="60">
+            <summary>
+              <div class="text-2xl">🧩</div>
+              <h3 class="display mt-3 text-lg font-bold">Meta &amp; Progression</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">Meta layers, progression curves and upgrade paths — the long game that structures a player's journey.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">On the live ARPG, I worked on how heroes, gear, ascension and account power interlock — helping pace the meta so early players feel constant progress while long-term players always have a next goal.</div>
+          </details>
+
+          <details class="card pillar" data-reveal data-reveal-delay="120">
+            <summary>
+              <div class="text-2xl">⚔️</div>
+              <h3 class="display mt-3 text-lg font-bold">Moment-to-Moment &amp; Combat Feel</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">Hero kits, enemy &amp; boss patterns, difficulty and the second-to-second feel that makes play satisfying.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">I worked on hero abilities, enemy and boss design, and the swap-based combat loop — tuning readability, telegraphs and pacing so fights feel fair, punchy and worth mastering.</div>
+          </details>
+
+          <details class="card pillar" data-reveal>
+            <summary>
+              <div class="text-2xl">🪙</div>
+              <h3 class="display mt-3 text-lg font-bold">Economy &amp; Monetization</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">Sinks &amp; sources, multi-currency economies, gacha &amp; drop rates, pricing, F2P conversion.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">Worked across the game's currencies and rewards — balancing what players earn vs. spend so the economy stays healthy and generous-feeling without undercutting monetization.</div>
+          </details>
+
+          <details class="card pillar" data-reveal data-reveal-delay="60">
+            <summary>
+              <div class="text-2xl">🔁</div>
+              <h3 class="display mt-3 text-lg font-bold">Live-Ops, Events &amp; Modes</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">Events, content cadence, banners and game modes — the reasons players keep coming back.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">Worked on game modes and recurring content that give the live game a rhythm — feeding progression and the economy while keeping the week-to-week experience fresh.</div>
+          </details>
+
+          <details class="card pillar" data-reveal data-reveal-delay="120">
+            <summary>
+              <div class="text-2xl">🎯</div>
+              <h3 class="display mt-3 text-lg font-bold">UX &amp; Onboarding</h3>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">First-time user experience, flows and readability — making complex systems feel simple.</p>
+              <span class="pillar-hint">Show example <svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pillar-detail">Helped shape onboarding and UX so a systems-heavy game stays approachable — sequencing what players learn and when, so depth reveals itself without overwhelming newcomers.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT + EXPERIENCE ============================= -->
+    <section id="about" class="section">
+      <div class="container grid gap-12 lg:grid-cols-2">
+        <div data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 class="display mt-4 text-3xl font-bold sm:text-4xl">A designer with an analyst's eye</h2>
+          <div class="mt-5 space-y-4" style="color: var(--text-muted)">
+            <p>
+              I'm a game designer focused on mobile live-service games, and it comes down to one thing: making games
+              that are fun to play — and stay fun. The way I get there is <strong style="color: var(--text)">accessible
+              depth</strong> — core and midcore systems delivered with the low floor and broad appeal of a casual game,
+              so newcomers aren't scared off and committed players always have somewhere deeper to go. For the last three years I've put that into
+              practice as the designer on a small live-ARPG team — the two founders (CEO &amp; CPO) and me — growing from
+              junior into a broad, hands-on role.
+            </p>
+            <p>
+              My path here wasn't the usual one. I served as an officer in the Israeli Navy, where I learned to lead,
+              stay disciplined and execute under pressure, then spent a year and a half as an analyst at
+              <strong style="color: var(--text)">VGames</strong>, a games-focused VC, working on investment and
+              competitive market research. That mix taught me to pair design instinct with data and market context — and
+              to take products apart to understand what actually makes them work.
+            </p>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="chip">Mobile F2P</span>
+            <span class="chip">Live-service</span>
+            <span class="chip">Meta &amp; systems</span>
+            <span class="chip">Gameplay feel</span>
+            <span class="chip">Analytics</span>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="80">
+          <p class="eyebrow">Experience</p>
+          <div class="timeline mt-6">
+            <div class="timeline-item">
+              <div class="text-sm" style="color: var(--text-faint)">Present · 3+ years</div>
+              <h3 class="display mt-1 text-lg font-bold">Game Designer</h3>
+              <p class="text-sm" style="color: var(--accent-strong)">Glaive Games — Swap Heroes: Eternal Legends</p>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">
+                The game designer on a core team of three (the founders and me) — I've grown from junior into a broad,
+                hands-on role across heroes, combat, enemies, bosses, game modes, economy and UX.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="text-sm" style="color: var(--text-faint)">1.5 years</div>
+              <h3 class="display mt-1 text-lg font-bold">Analyst</h3>
+              <p class="text-sm" style="color: var(--accent-strong)">VGames — games-focused VC</p>
+              <p class="mt-2 text-sm" style="color: var(--text-muted)">
+                Investment &amp; competitive market research — revenue, features, retention and marketing analysis.
+              </p>
+            </div>
+            <div class="timeline-item">
+              <div class="text-sm" style="color: var(--text-faint)">2016 – 2022</div>
+              <h3 class="display mt-1 text-lg font-bold">Naval Officer</h3>
+              <p class="text-sm" style="color: var(--accent-strong)">Israeli Navy (IDF) — Command &amp; Control · International Exercise Planning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= BACKGROUND ============================= -->
+    <section id="background" class="section">
+      <div class="container">
+        <div class="grid gap-10 md:grid-cols-3">
+          <div data-reveal>
+            <p class="eyebrow">Education</p>
+            <div class="mt-5 space-y-5">
+              <div>
+                <h3 class="font-semibold">Video Game Design &amp; Development</h3>
+                <p class="text-sm" style="color: var(--accent-strong)">Mentor College, Ramat-Gan · 2020–2022</p>
+                <p class="mt-1 text-sm" style="color: var(--text-muted)">Unity development, game design &amp; production. Later returned to teach the game design course as a guest instructor (~1 year).</p>
+              </div>
+              <div>
+                <h3 class="font-semibold">High School — Sciences track</h3>
+                <p class="text-sm" style="color: var(--accent-strong)">David Kalay, Givatayim · 2010–2015</p>
+                <p class="mt-1 text-sm" style="color: var(--text-muted)">Mathematics, physics, psychology, biology.</p>
+              </div>
+            </div>
+          </div>
+
+          <div data-reveal data-reveal-delay="80">
+            <p class="eyebrow">Tools &amp; Skills</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="chip">Unity</span>
+              <span class="chip">Economy &amp; systems modelling</span>
+              <span class="chip">Data analysis</span>
+              <span class="chip">Competitive research &amp; teardowns</span>
+              <span class="chip">Design docs (GDDs)</span>
+              <span class="chip">Rapid prototyping</span>
+              <span class="chip">AI-assisted workflows</span>
+            </div>
+          </div>
+
+          <div data-reveal data-reveal-delay="160">
+            <p class="eyebrow">Languages</p>
+            <ul class="mt-5 space-y-3 text-sm">
+              <li class="flex items-center justify-between border-b pb-2" style="border-color: var(--border)"><span>Hebrew</span><span style="color: var(--text-faint)">Native</span></li>
+              <li class="flex items-center justify-between border-b pb-2" style="border-color: var(--border)"><span>English</span><span style="color: var(--text-faint)">Native-level</span></li>
+              <li class="flex items-center justify-between"><span>Russian</span><span style="color: var(--text-faint)">Advanced</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="card" style="padding: clamp(2rem, 5vw, 3.5rem)" data-reveal>
+          <div class="grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+            <div>
+              <p class="eyebrow">Contact</p>
+              <h2 class="display mt-4 text-3xl font-bold sm:text-4xl">Let's build something with depth</h2>
+              <p class="mt-4" style="color: var(--text-muted)">
+                Open to game design and design-analyst roles. The fastest way to reach me:
+              </p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <a href="mailto:vanvan56@gmail.com" class="btn btn-primary">Email me</a>
+              <a href="https://www.linkedin.com/in/rony-gankin-83196a230/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+              <a href="https://wa.me/972544557798" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="border-t py-8" style="border-color: var(--border)">
+    <div class="container flex flex-col items-center justify-between gap-3 text-sm sm:flex-row" style="color: var(--text-faint)">
+      <p>© <span data-year></span> Rony Gankin. Built with care.</p>
+      <a href="#top" class="link-underline">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============================= CONTACT MODAL ============================= -->
+  <div class="modal" data-contact-modal hidden>
+    <div class="modal-backdrop" data-contact-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button class="modal-close" data-contact-close aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <p class="eyebrow">Contact</p>
+      <h3 id="contact-modal-title" class="display mt-2 text-xl font-bold">Get in touch</h3>
+
+      <div class="mt-5 flex flex-col gap-2.5">
+        <a class="contact-row" href="mailto:vanvan56@gmail.com">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
+          </span>
+          <span class="flex flex-col">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">vanvan56@gmail.com</span>
+          </span>
+        </a>
+
+        <a class="contact-row" href="https://www.linkedin.com/in/rony-gankin-83196a230/" target="_blank" rel="noopener">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></svg>
+          </span>
+          <span class="flex flex-col">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">rony-gankin</span>
+          </span>
+        </a>
+
+        <a class="contact-row" href="https://wa.me/972544557798" target="_blank" rel="noopener">
+          <span class="contact-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.71-.84-1.98-.94-.27-.1-.46-.15-.65.14-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.44-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.57-.89-2.15-.24-.56-.47-.49-.65-.5-.17-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.27.29-1.01.99-1.01 2.41 0 1.42 1.04 2.8 1.18 2.99.15.19 2.04 3.12 4.95 4.38.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.11.56-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.42-9.41 2.52 0 4.88.98 6.66 2.76a9.35 9.35 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42zm8.02-17.44A11.28 11.28 0 0 0 12.04 0C5.84 0 .8 5.04.8 11.24c0 1.98.52 3.92 1.5 5.63L.7 24l7.3-1.92a11.23 11.23 0 0 0 5.37 1.37h.01c6.2 0 11.24-5.04 11.24-11.24 0-3-1.17-5.83-3.3-7.95z" /></svg>
+          </span>
+          <span class="flex flex-col">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+972 54-455-7798</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
