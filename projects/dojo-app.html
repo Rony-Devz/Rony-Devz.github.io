@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JJJ Study App — Case Study · Rony Gankin</title>
-  <meta name="description" content="Case study: JJJ Study App, a gamified PWA that teaches Japanese Ju-Jitsu technique names with flashcards, XP, streaks and a training calendar." />
+  <meta name="description" content="Case study: a trilingual Ju-Jitsu training and belt-exam-prep PWA — daily training sessions, an illustrated technique library and belt-graded progress mapped to real exam requirements, built for my dojo." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,15 +36,17 @@
       <div class="container">
         <div class="flex flex-wrap items-center gap-2" data-reveal>
           <span class="chip">Side project · Live PWA</span>
-          <span class="chip">Gamified learning</span>
+          <span class="chip">Ju-Jitsu training</span>
           <span class="chip">AI-assisted build</span>
         </div>
         <h1 class="display mt-5 text-4xl font-extrabold sm:text-5xl" data-reveal data-reveal-delay="60">JJJ Study App</h1>
         <p class="mt-6 max-w-2xl text-lg" style="color: var(--text-muted)" data-reveal data-reveal-delay="120">
-          A gamified PWA that helps students at my dojo memorize Japanese Ju-Jitsu technique names in three languages —
-          Japanese (kanji + romaji), English and Hebrew. 55 techniques across 10 families, with flashcards, a gentle
-          XP-based quiz, belts, daily streaks, a training calendar and one-tap tutorial videos. I designed it, built it
-          (AI-assisted, from basic coding), and shipped it as an installable app my dojo uses on the mat.
+          A trilingual Ju-Jitsu training and belt-exam-prep app I designed and built for my dojo — daily training
+          sessions built from a weekly plan, an illustrated technique library, and belt-graded progress mapped to the
+          real exam requirements, plus shadow-training, weak-point drills, XP and daily streaks. It started as a
+          trilingual flashcard trainer ("JJJ Study App", formerly "Judo Names Teacher"), and I've since rebuilt it from
+          the ground up into "Kawaishi Ju-Jitsu". Everything is trilingual — Japanese (kanji + romaji) · English ·
+          Hebrew. I designed it, built it (AI-assisted, from basic coding) and shipped it as an installable, offline PWA.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3" data-reveal data-reveal-delay="150">
@@ -56,16 +58,16 @@
 
         <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3" data-reveal>
           <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
-            <img src="../assets/img/jjj-cards.png" alt="JJJ Study App flashcard: Hiza-Hishigi shown in romaji and kanji, tap to flip" class="block w-full" loading="lazy" />
+            <img src="../assets/img/jjj-kawaishi-cover.png" alt="Kawaishi Ju-Jitsu training home: belt rank, today's session and syllabus" class="block w-full" loading="lazy" />
           </figure>
           <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
-            <img src="../assets/img/jjj-play.png" alt="JJJ Study App quiz: multiple-choice question identifying a pinning technique" class="block w-full" loading="lazy" />
+            <img src="../assets/img/jjj-kawaishi-library.png" alt="Kawaishi Ju-Jitsu technique library: illustrated techniques with search and category filters, names in Hebrew and romaji" class="block w-full" loading="lazy" />
           </figure>
           <figure class="overflow-hidden rounded-2xl" style="border: 1px solid var(--border); box-shadow: var(--shadow-lift)">
-            <img src="../assets/img/jjj-names.png" alt="JJJ Study App technique list: English, Japanese kanji, romaji and Hebrew side by side" class="block w-full" loading="lazy" />
+            <img src="../assets/img/jjj-kawaishi-progress.png" alt="Kawaishi Ju-Jitsu belt progress: readiness ring and belt exam requirements checklist" class="block w-full" loading="lazy" />
           </figure>
         </div>
-        <p class="mt-3 text-center text-sm" style="color: var(--text-faint)" data-reveal>Flashcards · gentle XP quiz · trilingual technique reference — running as an installable, offline PWA.</p>
+        <p class="mt-3 text-center text-sm" style="color: var(--text-faint)" data-reveal>Daily training · illustrated technique library · belt-graded exam prep — running as an installable, offline PWA.</p>
       </div>
     </section>
 
@@ -93,44 +95,48 @@
           <p class="eyebrow">The problem</p>
           <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Why it exists</h2>
           <p class="mt-4" style="color: var(--text-muted)">
-            Japanese Ju-Jitsu has a huge vocabulary of technique names that students are expected to know for
-            belt exams — hard to memorize, and scattered across notes and a syllabus. I wanted a single, friendly way
-            to <em>drill</em> those names, in the languages my dojo actually uses.
+            A Ju-Jitsu belt syllabus is a lot to hold in your head — not just the technique names, but how each one is
+            executed and the specific requirements you're tested on at every belt — all across Japanese (kanji + romaji),
+            English and Hebrew, and usually scattered across notes and a syllabus sheet. I wanted a single, friendly tool
+            my dojo would actually use: to learn the techniques, follow a plan, and know exactly what each grading asks for.
           </p>
         </div>
         <div data-reveal>
           <p class="eyebrow">Design</p>
-          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Gamification choices</h2>
+          <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">A training app in three parts</h2>
           <p class="mt-4" style="color: var(--text-muted)">
-            Straight game-design thinking applied to learning. <strong style="color: var(--text)">Flashcards</strong>
-            with a flip (Japanese romaji + kanji on one side; English, Hebrew and a morpheme breakdown on the other)
-            plus a reverse-recall mode. A <strong style="color: var(--text)">gentle, no-punish quiz</strong> with XP,
-            combos and juice — a wrong answer just resets your combo, never a harsh fail. A
-            <strong style="color: var(--text)">belt ladder</strong> (White → Black Dan) and a
-            <strong style="color: var(--text)">daily streak</strong> for motivation, and a
-            <strong style="color: var(--text)">training calendar</strong> to log mat sessions and build the habit. A
-            roots decoder breaks names into their building blocks, and official Kodokan tutorial videos are one tap
-            away — all trilingual (Japanese · English · Hebrew), with careful attention to correct naming.
+            Straight game-design thinking applied to learning, built around three screens. A daily
+            <strong style="color: var(--text)">Training</strong> flow, sized to a weekly plan with a clear start and
+            finish, so there's always one obvious thing to do next — plus <strong style="color: var(--text)">shadow-training</strong>
+            (solo self-defense drilling) and weak-point practice for the techniques you keep missing. An illustrated
+            <strong style="color: var(--text)">Library</strong>, organized by the Kawaishi method's technique families
+            with search, category filters and video, so any technique is a tap away. And belt-graded
+            <strong style="color: var(--text)">Progress</strong> that mirrors the real exam — a readiness ring toward
+            your next belt and a checklist of that grade's actual requirements. Gentle gamification (XP, daily streaks
+            and flashcards) keeps it motivating without punishing, and it's trilingual throughout
+            (Japanese · English · Hebrew), with careful attention to correct naming; a near-black UI with a single
+            lime-green accent.
           </p>
         </div>
         <div data-reveal>
           <p class="eyebrow">Build</p>
           <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Designing + shipping it myself</h2>
           <p class="mt-4" style="color: var(--text-muted)">
-            I built and shipped it as an installable <strong style="color: var(--text)">PWA</strong> (also packaged
-            toward an Android build) — AI-assisted, despite only basic coding. It's the same instinct I bring to game
-            work: own a feature end-to-end, from concept to a real thing people can use.
+            I designed, built and shipped it myself — AI-assisted, from basic coding — as an installable, offline
+            <strong style="color: var(--text)">PWA</strong> that updates whenever I ship a change. It's the same
+            end-to-end instinct I bring to game work: own a feature from concept to a real thing people can use.
           </p>
         </div>
         <div data-reveal>
           <p class="eyebrow">Outcome</p>
           <h2 class="display mt-3 text-2xl font-bold sm:text-3xl">Results</h2>
           <p class="mt-4" style="color: var(--text-muted)">
-            Live and in use at my dojo — it works fully offline on the mat and updates itself whenever I ship changes.
-            It really caught on after my own first belt exam: prepping with the app showed in the results, and students
-            started picking it up for their own gradings. It's the study companion I wish I'd had while learning the
-            syllabus, and the same end-to-end instinct I bring to game work: take a real need, design the system around
-            it, and ship something people actually use.
+            The earlier version — a trilingual flashcard trainer — really caught on at my dojo after my own first belt
+            exam: prepping with it showed in the results, and students started picking it up for their own gradings.
+            Kawaishi Ju-Jitsu is the ground-up rebuild of that idea into a complete training and exam-prep tool, newly
+            shipped and now rolling out to the mat. It's the study companion I wish I'd had while learning the syllabus —
+            and the same end-to-end instinct I bring to game work: take a real need, design the system around it, and
+            ship something people actually use.
           </p>
         </div>
       </div>
